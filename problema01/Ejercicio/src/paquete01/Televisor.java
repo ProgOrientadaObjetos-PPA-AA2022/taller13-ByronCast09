@@ -15,52 +15,32 @@ public class Televisor {
 
     private String marca;
     private double precio;
-    
-    public void establecerMarca(String m){
+
+    public Televisor(String marc, double prec) {
+        this.marca = marc;
+        this.precio = prec;
+    }
+
+    public void establecerMarca(String m) {
         marca = m;
     }
-    
-    public void establecerPrecio(double m){
+
+    public void establecerPrecio(double m) {
         precio = m;
     }
-    
-    public String obtenerMarca(){
+
+    public String obtenerMarca() {
         return marca;
     }
-    
-    public double obtenerPrecio(){
+
+    public double obtenerPrecio() {
         return precio;
     }
-    
-    public double totalPrecioTvs(ArrayList<Televisor> t){
-        double s = 0;
-        for (int i = 0; i < t.size(); i++) {
-            s = s + t.get(i).obtenerPrecio();
-            System.out.println(s);
-        }
-        return s;
-    }
-    
-    public double televisorMasCaro(ArrayList<Televisor> t){
-        double s = 0;
-        // pass
-        return s;
-    }
-    
-    public String listaMarcasVendidas(ArrayList<Televisor> t){
-        String s = "";
-        for (int i = 0; i < t.size(); i++) {
-            s = String.format("%s%s\n", s, t.get(i).obtenerMarca());
-        }
-        return s;
-    }
-    
+
     @Override
-    public String toString(){
-        return String.format("TV:%s\n%s\n",
-                obtenerMarca(),
-                obtenerPrecio());
+    public String toString() {
+        String cadena = String.format("Marca: %s\n"+
+                "Precio: %.2f\n",marca,precio);
+        return cadena;
     }
-    
-    
 }
