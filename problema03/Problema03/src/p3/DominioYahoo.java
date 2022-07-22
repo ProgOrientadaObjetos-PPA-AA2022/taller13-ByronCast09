@@ -7,13 +7,13 @@ package p3;
 
 /**
  *
- * @author reroes
+ * @author USUARIO 2020
  */
-public class DominioGmail implements DominioCorreos {
+public class DominioYahoo implements DominioCorreos{
     private String dominio;
     @Override
     public void establecerDominio(){
-        dominio = "gmail.com";
+        dominio = "yahoo.com";
     }
     @Override
     public String obtenerDominio(){
@@ -21,7 +21,7 @@ public class DominioGmail implements DominioCorreos {
     }
     @Override
     public String toString(){
-        String cadenafinal = "Dominio Gmail";
+        String cadenafinal = "Dominio Yahoo";
         return cadenafinal;
     }
 }

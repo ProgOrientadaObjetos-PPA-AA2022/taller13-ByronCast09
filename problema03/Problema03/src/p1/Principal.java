@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import p2.Estudiante;
 import p3.Correo;
 import p3.DominioGmail;
+import p3.DominioOutlook;
+import p3.DominioYahoo;
+import p3.GobiernoEc;
+import p3.Utpl;
 
 /**
  *
@@ -33,14 +37,46 @@ public class Principal {
         e.establecerUserName("rrelizalde");
         ArrayList<Correo> lista = new ArrayList<>();
         
-        DominioGmail dominio = new DominioGmail();
-        dominio.establecerDominio("gmail.com");
-        Correo c = new Correo();
-        c.establecerDominio(dominio);
-        c.establecerUserName(e.obtenerUserName());
-        c.establecerCorreo();
+        DominioGmail dominioGmail = new DominioGmail();
+        dominioGmail.establecerDominio();
+        Correo c1 = new Correo();
+        c1.establecerDominio(dominioGmail);
+        c1.establecerUserName(e.obtenerUserName());
+        c1.establecerCorreo();
+        lista.add(c1);
         
-        lista.add(c);
+        DominioOutlook dominioOutlook =new DominioOutlook();
+        dominioOutlook.establecerDominio();
+        Correo c2 = new Correo();
+        c2.establecerDominio(dominioOutlook);
+        c2.establecerUserName(e.obtenerUserName());
+        c2.establecerCorreo();
+        lista.add(c2);
+        
+        DominioYahoo dominioYah=new DominioYahoo();
+        dominioYah.establecerDominio();
+        Correo c3 = new Correo();
+        c3.establecerDominio(dominioYah);
+        c3.establecerUserName(e.obtenerUserName());
+        c3.establecerCorreo();
+        lista.add(c3);
+        
+        GobiernoEc gob=new GobiernoEc();
+        gob.establecerDominio();
+        Correo c4 = new Correo();
+        c4.establecerDominio(gob);
+        c4.establecerUserName(e.obtenerUserName());
+        c4.establecerCorreo();
+        lista.add(c4);
+        
+        Utpl uni =new Utpl();
+        uni.establecerDominio();
+        Correo c5 = new Correo();
+        c5.establecerDominio(uni);
+        c5.establecerUserName(e.obtenerUserName());
+        c5.establecerCorreo();
+        lista.add(c5);
+        
         
         e.establecerCorreos(lista);
         

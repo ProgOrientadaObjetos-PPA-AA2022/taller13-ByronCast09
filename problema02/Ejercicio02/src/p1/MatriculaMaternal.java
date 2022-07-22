@@ -9,7 +9,7 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaMaternal {
+public class MatriculaMaternal extends Matriculas{
     private double tarifa;
     
         
@@ -20,5 +20,11 @@ public class MatriculaMaternal {
         
     public double obtenerTarifa(){
         return tarifa;
+    }
+    @Override
+    public String toString() {
+        String cadenafinal = String.format("\nMatricula Maternal: %.2f\n",
+                obtenerTarifa());
+        return cadenafinal;
     }
 }

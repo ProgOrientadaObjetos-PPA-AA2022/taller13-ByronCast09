@@ -20,27 +20,23 @@ public class Televisor {
         this.marca = marc;
         this.precio = prec;
     }
-
     public void establecerMarca(String m) {
         marca = m;
     }
-
     public void establecerPrecio(double m) {
         precio = m;
     }
-
     public String obtenerMarca() {
         return marca;
     }
-
     public double obtenerPrecio() {
         return precio;
     }
-
     @Override
     public String toString() {
         String cadena = String.format("Marca: %s\n"+
                 "Precio: %.2f\n",marca,precio);
         return cadena;
     }
+
 }

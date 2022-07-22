@@ -34,13 +34,12 @@ public class Principal {
         tvs.add(t2);
         tvs.add(t3);
         System.out.println("-----------------");
-        OperacionesTelevisor op1 = new OperacionesTelevisor();
-        op1.establecerMarcas(tvs);
-        op1.establecerPrecio(tvs);
+        OperacionesTelevisor op1 = new OperacionesTelevisor(tvs);
+        op1.establecerListaMarcasVendidas();
         op1.establecerTotalPrecioTvs();
         op1.establecerTelevisorMasCaro();
 
-        System.out.printf("%s\n",tvs);
+        System.out.printf("%s\n",op1);
 
     }
 }

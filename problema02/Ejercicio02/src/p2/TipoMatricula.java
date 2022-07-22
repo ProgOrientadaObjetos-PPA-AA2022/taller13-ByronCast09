@@ -5,8 +5,10 @@
  */
 package p2;
 
+import java.util.ArrayList;
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
+import p1.Matriculas;
 
 /**
  *
@@ -14,17 +16,18 @@ import p1.MatriculaColegio;
  */
 public class TipoMatricula {
     private double promedioMatriculas;
-    private MatriculaCampamento campamento;
-    private MatriculaColegio colegio;
+    private ArrayList<Matriculas>lista = new ArrayList<>();
+    //private MatriculaCampamento campamento;
+    //private MatriculaColegio colegio;
     // private MatriculaEscuela escuela;
     // private MatriculaJardin jardin;
     // private MatriculaMaternal maternal;
     // private MatriculaMaternal maternal2;
     
-    public void establecerMatriculaCampamento(MatriculaCampamento c){
-        campamento = c;
+    public void establecerListaMatriculas(ArrayList<Matriculas>ma){
+        lista = ma;
     }
-    
+    /*
     public void establecerMatriculaColegio(MatriculaColegio c){
         colegio = c;
     }
@@ -33,17 +36,32 @@ public class TipoMatricula {
         return campamento;
     }
     
+    
     public MatriculaColegio obtenerMatriculaColegio(){
         return colegio;
     }
-    
+    */
     public void establecerPromedioTarifas(){
-        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa() + 
-                obtenerMatriculaColegio().obtenerTarifa())/2;
+        double suma = 0;
+        for (Matriculas e:lista) {
+            suma = suma+e.obtenerTarifa();
+        }
+        promedioMatriculas = suma / lista.size();
+                //obtenerMatriculaColegio().obtenerTarifa())/2;
         
     }
     
     public double obtenerPromedioTarifas(){
         return promedioMatriculas;
+    }
+    @Override
+    public String toString(){
+        String cadenafinal = ("");
+        for(Matriculas e:lista){
+            cadenafinal = String.format("%s%s",cadenafinal,e);
+        }
+        cadenafinal = String.format("%sEl promedio de Tarifas de las Matriculas es: %.2f\n",
+                cadenafinal,promedioMatriculas);
+        return cadenafinal;
     }
 }
